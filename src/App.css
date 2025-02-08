@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --text-color: #2c3e50;
+  --border-color: #ecf0f1;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ecf0f1;
+  color: var(--text-color);
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout containers */
+.App {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.form-section {
+  flex: 0.4; /* Changed from 0.75 to 0.6 */
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.preview-section {
+  flex: 0.6; /* Changed from 0.25 to 0.4 */
+  padding: 15px;
+  background-color: #fff;
+  position: relative;
+  max-height: 100vh;
+  overflow-y: auto;
+  font-size: 0.9rem; /* Slightly smaller font for preview */
+}
+
+.cv-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 15px 20px; /* Increased horizontal padding */
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-size: 0.9rem; /* Slightly increased font size */
+  line-height: 1.4;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.form-group textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+/* Collapsible Header */
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  font-size: 1rem;
+  margin-bottom: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.collapsible-header button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.collapsible-header:hover {
+  background-color: var(--secondary-color);
+}
+
+/* CV Preview Styling */
+.cv-header {
+  padding: 0 0 10px;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.cv-header h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.cv-header .contact-info {
+  margin-top: 8px;
+  color: var(--secondary-color);
+  font-size: 0.85rem;
+}
+
+.cv-section {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.cv-section h2 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 3px;
+}
+
+.cv-section .entry {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 2px solid var(--accent-color);
+}
+
+.cv-section .entry-header {
+  margin-bottom: 5px;
+  gap: 10px;
+}
+
+.cv-section .entry-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.cv-section .entry-subtitle,
+.cv-section .entry-date {
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  margin: 2px 0;
+}
+
+.download-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 6px 15px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.download-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Containers & Buttons */
+.section-container {
+  margin-bottom: 10px;
+  padding: 5px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.remove-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.education-entry,
+.experience-entry {
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+/* Print adjustments */
+@media print {
+  .form-section, .download-btn,
+  .collapsible-header {
+    display: none;
+  }
+  
+  .preview-section {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cv-content {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .cv-section .entry {
+    page-break-inside: avoid;
+  }
+
+  body {
+    background: white;
+  }
+  
+  .cv-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .form-section,
+  .preview-section {
+    flex: none;
+    width: 100%;
+    max-height: none;
+  }
+
+  .preview-section {
+    margin-top: 20px;
+  }
+}
+
+/* Add animation for collapsible sections */
+.form-content {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  max-height: 1000px;
+}
+
+.form-content.collapsed {
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.form-content.expanded {
+  max-height: 1000px;
+}
+
+/* Improve print layout */
+@page {
+  margin: 0.5cm;
+}
