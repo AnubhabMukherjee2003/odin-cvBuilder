@@ -253,33 +253,139 @@ body {
 
 /* Print adjustments */
 @media print {
-  .form-section, .download-btn,
-  .collapsible-header {
-    display: none;
-  }
-  
-  .preview-section {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .cv-content {
-    box-shadow: none;
-    padding: 0;
-  }
-  
-  .cv-section .entry {
-    page-break-inside: avoid;
+  /* Print layout */
+  .App {
+    display: block;
+    height: auto;
+    width: 100%;
   }
 
-  body {
-    background: white;
+  /* Hide non-printable elements */
+  .form-section, 
+  .download-btn {
+    display: none;
   }
-  
+
+  /* Preview section */
+  .preview-section {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* CV Content */
   .cv-content {
     width: 100%;
+    padding: 20px;
     margin: 0;
-    padding: 0;
+    box-shadow: none;
+  }
+
+  /* Typography for print */
+  .cv-header h1 { font-size: 18pt; }
+  .cv-section h2 { font-size: 14pt; }
+  .cv-section .entry-title { font-size: 12pt; }
+  p, .entry-subtitle, .entry-date { font-size: 11pt; }
+
+  /* Section breaks */
+  .cv-section {
+    break-inside: avoid;
+    margin-bottom: 15pt;
+  }
+
+  /* Experience entries */
+  .cv-section .entry {
+    break-inside: avoid;
+    margin-bottom: 12pt;
+    padding-left: 10pt;
+    border-left: 1pt solid #000;
+  }
+
+  /* Lists in experience section */
+  .achievements-list {
+    break-inside: avoid;
+    margin: 8pt 0;
+    padding-left: 15pt;
+  }
+
+  .achievements-list li {
+    break-inside: avoid;
+    margin-bottom: 4pt;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+
+  /* Color handling */
+  * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+    background: transparent !important;
+    color: black !important;
+  }
+
+  /* Reduce margins */
+  @page {
+    margin: 1cm;
+    size: A4 portrait;
+  }
+
+  /* Reduce spacing */
+  .cv-content {
+    padding: 12px;
+    line-height: 1.2;
+  }
+
+  /* Smaller font sizes */
+  .cv-header h1 { 
+    font-size: 16pt; 
+    margin-bottom: 6pt;
+  }
+  
+  .cv-header .contact-info {
+    font-size: 9pt;
+    margin-top: 4pt;
+  }
+
+  .cv-section h2 { 
+    font-size: 12pt;
+    margin: 8pt 0 4pt 0;
+    padding-bottom: 2pt;
+  }
+
+  .cv-section .entry {
+    margin-bottom: 6pt;
+    padding-left: 8pt;
+  }
+
+  .cv-section .entry-title { 
+    font-size: 10pt; 
+  }
+
+  p, .entry-subtitle, .entry-date { 
+    font-size: 9pt;
+    margin: 2pt 0;
+  }
+
+  /* Tighter list spacing */
+  .achievements-list {
+    margin: 4pt 0;
+    padding-left: 12pt;
+  }
+
+  .achievements-list li {
+    margin-bottom: 2pt;
+  }
+
+  /* Reduce section spacing */
+  .cv-section {
+    margin-bottom: 8pt;
   }
 }
 
